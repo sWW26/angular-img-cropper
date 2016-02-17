@@ -1277,7 +1277,7 @@ angular.module('angular-img-cropper', []).directive("imageCropper", ['$document'
             })();
 
             function setup(newValue, oldValue) {
-              if(crop && newValue === oldValue) {
+              if(crop && (newValue === oldValue || crop.currentlyInteracting || crop.isMouseDown)) {
                 return;
               }
 
